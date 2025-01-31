@@ -10,7 +10,12 @@ export default defineConfig({
     assetsDir: 'assets',
     sourcemap: true,
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime'],
+      external: [
+        'react', 
+        'react-dom', 
+        'react/jsx-runtime',
+        'react-dom/client'
+      ],
       input: {
         main: path.resolve(__dirname, 'index.html'),
       },
@@ -18,7 +23,8 @@ export default defineConfig({
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
-          'react/jsx-runtime': 'jsx'
+          'react/jsx-runtime': 'jsx',
+          'react-dom/client': 'ReactDOM'
         }
       }
     }

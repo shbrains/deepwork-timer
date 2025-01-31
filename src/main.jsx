@@ -1,9 +1,10 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+// Use the global ReactDOM instead of importing from 'react-dom/client'
+const root = window.ReactDOM.createRoot(document.getElementById('root'))
+root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
