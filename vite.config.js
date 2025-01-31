@@ -10,14 +10,22 @@ export default defineConfig({
     assetsDir: 'assets',
     sourcemap: true,
     rollupOptions: {
+      external: ['react', 'react-dom', 'react/jsx-runtime'],
       input: {
         main: path.resolve(__dirname, 'index.html'),
       },
-    },
+      output: {
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+          'react/jsx-runtime': 'jsx'
+        }
+      }
+    }
   },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
-    },
-  },
+    }
+  }
 }) 
