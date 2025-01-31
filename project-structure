@@ -1,0 +1,13 @@
+deepwork-timer/
+├── src/
+│   ├── components/
+│   │   ├── Timer.jsx
+│   │   ├── SessionControls.jsx
+│   │   ├── DistractionLog.jsx
+│   │   └── SessionHistory.jsx
+│   ├── services/
+│   │   └── notionService.js
+│   ├── App.jsx
+│   └── main.jsx
+├── .env
+└── package.json 
