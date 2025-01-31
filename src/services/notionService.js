@@ -4,7 +4,7 @@ const notion = new Client({
   auth: 'ntn_v58628656701DiUx0cBuI2CkcS1GecU0oOu5QyCz23o3F6'
 })
 
-const DATABASE_ID = '' // Add your database ID here
+const DATABASE_ID = '18c15d743b068021b269cdad1ac9a2fe'
 
 export const createSessionEntry = async ({
   focus,

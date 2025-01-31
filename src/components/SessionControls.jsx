@@ -1,4 +1,4 @@
-const SessionControls = ({ isWorking, onStart, onPause, onDistraction, onEndSession }) => {
+const SessionControls = ({ isWorking, onStart, onPause, onDistraction, onBreak, onEndSession }) => {
   return (
     <div className="flex justify-center gap-4 mb-8">
       {!isWorking ? (
@@ -22,6 +22,13 @@ const SessionControls = ({ isWorking, onStart, onPause, onDistraction, onEndSess
         className="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600"
       >
         Distraction
+      </button>
+
+      <button
+        onClick={onBreak}
+        className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600"
+      >
+        Break
       </button>
       
       <button

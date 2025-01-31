@@ -40,6 +40,11 @@ function App() {
     setDistractions(prev => [...prev, { timestamp: new Date(), duration: 0 }])
   }
 
+  const handleBreak = () => {
+    setIsWorking(false)
+    setBreaks(prev => [...prev, { timestamp: new Date() }])
+  }
+
   const calculateSessionMetrics = () => {
     const totalTime = sessionTime / 60 // Convert to minutes
     const distractionTime = distractions.length * 5 // Assuming 5 mins per distraction
@@ -87,6 +92,7 @@ function App() {
           onStart={handleStartSession}
           onPause={handlePauseSession}
           onDistraction={handleDistraction}
+          onBreak={handleBreak}
           onEndSession={handleEndSession}
         />
         
