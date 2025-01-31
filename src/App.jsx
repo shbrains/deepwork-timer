@@ -24,6 +24,14 @@ function App() {
     return () => clearInterval(interval)
   }, [isWorking])
 
+  useEffect(() => {
+    // Handle GitHub Pages base path
+    const path = window.location.pathname
+    if (path !== '/' && !path.includes('/deepwork-timer')) {
+      window.location.href = '/deepwork-timer/'
+    }
+  }, [])
+
   const handleStartSession = () => {
     setIsWorking(true)
     setSessionStart(new Date())
