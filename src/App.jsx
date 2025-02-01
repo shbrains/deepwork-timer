@@ -1,3 +1,5 @@
+console.log('App component loaded')
+
 import { useState, useEffect } from 'react'
 import Timer from './components/Timer'
 import SessionControls from './components/SessionControls'

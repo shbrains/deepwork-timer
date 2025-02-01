@@ -35,7 +35,13 @@ jobs:
           VITE_NOTION_DATABASE_ID: ${{ secrets.VITE_NOTION_DATABASE_ID }}
       
       - name: Check build output
-        run: ls -la dist
+        run: |
+          echo "Contents of dist directory:"
+          ls -la dist
+          echo "\nContents of dist/assets directory:"
+          ls -la dist/assets || echo "No assets directory"
+          echo "\nContents of dist/index.html:"
+          cat dist/index.html
       
       - name: Setup Pages
         uses: actions/configure-pages@v4

@@ -25,7 +25,11 @@ export default defineConfig({
           'react-dom': 'ReactDOM',
           'react/jsx-runtime': 'jsx',
           'react-dom/client': 'ReactDOM'
-        }
+        },
+        manualChunks: undefined,
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash].[ext]'
       }
     }
   },
@@ -33,5 +37,8 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src'),
     }
+  },
+  esbuild: {
+    jsxInject: `import React from 'react'`
   }
 }) 
